@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --verde: #163923;
+    --amarelo: #FFA800;
+    --branco: #FFFFFF;
+    --cor-fundo: #F9F3E3;
+    --cor-card: #E5D7BB;
+    --tamanho-fonte: 20px;
+}
