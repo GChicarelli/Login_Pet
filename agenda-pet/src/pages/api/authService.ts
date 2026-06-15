@@ -1,13 +1,13 @@
 import { api } from "./api";
 
 interface LoginRequest {
-    nif: string;
+    email: string;
     senha: string;
 }
 
 export async function loginUsuario(dados: LoginRequest) {
     try {
-        const response = await api.post("Autenticacao/login", dados);
+        const response = await api.post("Autenticacao/", dados);
 
         return response.data;
     } catch (error: any) {

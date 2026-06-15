@@ -1,4 +1,8 @@
+import { useRouter } from "next/router";
 import styles from "./login.module.css";
+import { useState } from "react";
+import { loginUsuario } from "../api/authService";
+import secureLocalStorage from "react-secure-storage";
 
 const Login = () => {
     const router = useRouter();
@@ -17,7 +21,7 @@ const Login = () => {
 
             secureLocalStorage.setItem("Token", resposta.token);
 
-            router.push("/coordenador/patrimonio");
+            router.push("/home");
         } catch (error: any) {
             alert(error.message);
         }
@@ -34,7 +38,7 @@ const Login = () => {
             </section>
  
             <section className={styles.AreaLogin}>
-                <form className={styles.titulo} >
+                <form className={styles.titulo} onSubmit={fazerLogin} >
                     <h1>Login</h1>
  
                     <div className={styles.email}>
@@ -56,6 +60,7 @@ const Login = () => {
  
                         <div className={styles.senhaErrada}>
                             <input
+                                type="password"
                                 id="senha"
                                 name="senha"
                                 placeholder="Insira a sua senha"
